@@ -15,3 +15,9 @@ CREATE TABLE owners (
     full_name varchar(100) NOT NULL,
     age INT 
 )
+
+CREATE TABLE species (
+    id BIGSERIAL NOT NULL PRIMARY KEY,
+    name varchar(100)
+)
+
