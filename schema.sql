@@ -29,3 +29,11 @@ ADD FOREIGN KEYS(species_id) REFERENCES species (id)
 ADD FOREIGN KEYS(owners) REFERENCES owners (id)
 
 
+UPDATE animals SET species = 'unspecified';
+UPDATE animals SET species = 'digimon' WHERE name like '%mon';
+UPDATE animals SET species = 'pokemon' WHERE species IS NULL;
+DELETE FROM animals;
+DELETE FROM animals WHERE date_of_birth > DATE '2022-01-01';
+UPDATE animals SET weight_kg = weight_kg * -1;
+UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
+
