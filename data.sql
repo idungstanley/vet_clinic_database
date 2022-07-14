@@ -37,3 +37,10 @@ VALUES('Dean Winchester', 14);
 INSERT INTO owners (name, age)
 VALUES('Jodie Whittaker', 38);
 
+//species
+INSERT INTO species (name)
+VALUES('Pokemon');
+INSERT INTO species (name)
+VALUES('Digimon');
+
+
