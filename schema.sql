@@ -21,12 +21,17 @@ CREATE TABLE species (
     name varchar(100)
 )
 
-ALTER TABLE animals  
-DROP COLUMN species
-ADD COLUMN species_id
-ADD COLUMN owner_id
-ADD FOREIGN KEYS(species_id) REFERENCES species (id)
-ADD FOREIGN KEYS(owners) REFERENCES owners (id)
+ALTER TABLE animals 
+DROP COLUMN species;
+
+
+ALTER TABLE animals 
+ADD COLUMN species_id INT,
+ADD FOREIGN KEY(species_id) REFERENCES species (id);
+
+ALTER TABLE animals
+ADD COLUMN owner_id INT,
+ADD FOREIGN KEY(owner_id) REFERENCES owners (id);
 
 
 UPDATE animals SET species = 'unspecified';
