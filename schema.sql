@@ -21,3 +21,11 @@ CREATE TABLE species (
     name varchar(100)
 )
 
+ALTER TABLE animals  
+DROP COLUMN species
+ADD COLUMN species_id
+ADD COLUMN owner_id
+ADD FOREIGN KEYS(species_id) REFERENCES species (id)
+ADD FOREIGN KEYS(owners) REFERENCES owners (id)
+
+
