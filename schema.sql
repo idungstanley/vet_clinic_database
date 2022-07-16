@@ -40,3 +40,21 @@ CREATE TABLE vets (
     date_of_graduation DATE
 )
 
+CREATE TABLE IF NOT EXISTS specialization (
+id BIGSERIAL NOT NULL PRIMARY KEY,
+species_id INT,
+FOREIGN KEY (species_id) REFERENCES species(id),
+vet_id INT,
+FOREIGN KEY (vet_id) REFERENCES vets(id)
+);
+
+CREATE TABLE IF NOT EXISTS visits (
+id BIGSERIAL NOT NULL PRIMARY KEY,
+animal_id INT,
+FOREIGN KEY (animal_id) REFERENCES animals(id),
+vet_id INT,
+FOREIGN KEY (vet_id) REFERENCES vets(id)
+);
+
+ALTER TABLE visits
+ADD COLUMN date_of_visit DATE;
