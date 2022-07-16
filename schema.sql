@@ -33,12 +33,10 @@ ALTER TABLE animals
 ADD COLUMN owner_id INT,
 ADD FOREIGN KEY(owner_id) REFERENCES owners (id);
 
-
-UPDATE animals SET species = 'unspecified';
-UPDATE animals SET species = 'digimon' WHERE name like '%mon';
-UPDATE animals SET species = 'pokemon' WHERE species IS NULL;
-DELETE FROM animals;
-DELETE FROM animals WHERE date_of_birth > DATE '2022-01-01';
-UPDATE animals SET weight_kg = weight_kg * -1;
-UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
+CREATE TABLE vets (
+    id BIGSERIAL NOT NULL PRIMARY KEY,
+    name varchar(100),
+    age INT,
+    date_of_graduation DATE
+)
 
