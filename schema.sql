@@ -33,12 +33,28 @@ ALTER TABLE animals
 ADD COLUMN owner_id INT,
 ADD FOREIGN KEY(owner_id) REFERENCES owners (id);
 
+CREATE TABLE vets (
+    id BIGSERIAL NOT NULL PRIMARY KEY,
+    name varchar(100),
+    age INT,
+    date_of_graduation DATE
+);
 
-UPDATE animals SET species = 'unspecified';
-UPDATE animals SET species = 'digimon' WHERE name like '%mon';
-UPDATE animals SET species = 'pokemon' WHERE species IS NULL;
-DELETE FROM animals;
-DELETE FROM animals WHERE date_of_birth > DATE '2022-01-01';
-UPDATE animals SET weight_kg = weight_kg * -1;
-UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
+CREATE TABLE specialization (
+id BIGSERIAL NOT NULL PRIMARY KEY,
+species_id INT,
+vet_id INT,
+FOREIGN KEY (species_id) REFERENCES species(id),
+FOREIGN KEY (vet_id) REFERENCES vets(id)
+);
 
+CREATE TABLE IF NOT EXISTS visits (
+id BIGSERIAL NOT NULL PRIMARY KEY,
+animal_id INT,
+vet_id INT,
+FOREIGN KEY (animal_id) REFERENCES animals(id),
+FOREIGN KEY (vet_id) REFERENCES vets(id)
+);
+
+ALTER TABLE visits
+ADD COLUMN date_of_visit DATE;
