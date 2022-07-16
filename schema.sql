@@ -38,21 +38,21 @@ CREATE TABLE vets (
     name varchar(100),
     age INT,
     date_of_graduation DATE
-)
+);
 
-CREATE TABLE IF NOT EXISTS specialization (
+CREATE TABLE specialization (
 id BIGSERIAL NOT NULL PRIMARY KEY,
 species_id INT,
-FOREIGN KEY (species_id) REFERENCES species(id),
 vet_id INT,
+FOREIGN KEY (species_id) REFERENCES species(id),
 FOREIGN KEY (vet_id) REFERENCES vets(id)
 );
 
 CREATE TABLE IF NOT EXISTS visits (
 id BIGSERIAL NOT NULL PRIMARY KEY,
 animal_id INT,
-FOREIGN KEY (animal_id) REFERENCES animals(id),
 vet_id INT,
+FOREIGN KEY (animal_id) REFERENCES animals(id),
 FOREIGN KEY (vet_id) REFERENCES vets(id)
 );
 
