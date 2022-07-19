@@ -42,3 +42,12 @@ DELETE FROM animals WHERE date_of_birth > DATE '2022-01-01';
 UPDATE animals SET weight_kg = weight_kg * -1;
 UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
 
+--performance audit
+-- Add an email column to your owners table
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+CREATE INDEX visits_animal_id ON visits(animal_id);
+
+Create Index visits_vet_id on visits(vet_id);
+
+Create index owners_email_index On owners(email);

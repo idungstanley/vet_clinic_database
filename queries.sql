@@ -31,3 +31,11 @@ SELECT A.name, O.full_name FROM animals A JOIN species S ON S.id = A.species_id 
 SELECT A.name, O.full_name FROM animals A JOIN species S ON S.id = A.species_id JOIN owners O  ON O.id = A.owner_id WHERE O.full_name = 'Dean Winchester' AND A.escape_attempts = 0;
 
 SELECT owners.id, full_name FROM animals JOIN owners ON animals.owner_id = owners.id GROUP BY owners.id, owners.full_name ORDER BY count(*) DESC LIMIT 1;
+
+
+-- WEEK 2 DAY 1:
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits WHERE animal_id = 4;
+
+EXPLAIN ANALYZE SELECT  vet_id FROM visits WHERE vet_id = 2;
+
+EXPLAIN ANALYZE SELECT full_name, email FROM owners WHERE email = 'owner_18327@mail.com';
