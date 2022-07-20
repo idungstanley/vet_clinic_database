@@ -13,12 +13,17 @@ This repository includes files with plain SQL that can be used to recreate a dat
 - Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database. **Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**
 
 
-👤 **Author**
+👤 **Stanley Sunday**
 
 - GitHub: [@idungstanley](https://github.com/idungstanley)
 - Twitter: [@IdungStanley](https://twitter.com/IdungStanley)
 - LinkedIn: [Stanley Idung Sunday](https://www.linkedin.com/in/sundaystanley56/)
 
+👤 **Fatima Zahir**
+
+- GitHub: [@githubhandle](https://github.com/Fatima-hub333)
+- Twitter: [@twitterhandle](https://twitter.com/Fatima_developr)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/fatimaa-zahir/)
 
 ## 🤝 Contributing
 
